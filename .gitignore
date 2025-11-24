@@ -1,0 +1,20 @@
+# Ignore the real CSV with actual addresses
+Hardware_Shipments.csv
+
+# Ignore the Excel dashboard (binary, large, user-specific)
+Shipping_Dashboard.xlsx
+
+# Ignore VS Code workspace settings
+.vscode/
+
+# Ignore system-generated metadata
+Thumbs.db
+Desktop.ini
+
+# Ignore OneDrive sync leftovers
+*.lnk
+*.tmp
+~$*
+
+# Ignore PowerShell history
+*.pshistory

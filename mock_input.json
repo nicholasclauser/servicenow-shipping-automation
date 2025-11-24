@@ -1,0 +1,14 @@
+{
+  "result": [
+    {
+      "number": "RITM0010012",
+      "u_city": "Toronto",
+      "u_street": "123 King St",
+      "u_postalcode": "M5V2T3",
+      "state": "3",
+      "requested_for": {
+        "display_value": "System Administrator"
+      }
+    }
+  ]
+}
