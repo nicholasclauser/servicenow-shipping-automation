@@ -1,10 +1,11 @@
 # Build-ShippingCSV.ps1
 # extracts shipping data from ServiceNow and exports it to a CSV that syncs through OneDrive.
 
-# connection info
+# connection info - 
 $instance = "devinstance.service-now.com"
 $user = "usernamegoeshere"
 $pwd = "passwordgoeshere"
+$csvPath = "C:\PathToYourFolderHere\Hardware_Shipments.csv"
 
 # build basic auth header
 $authString = "{0}:{1}" -f $user, $pwd
@@ -36,7 +37,6 @@ try {
         @{Name="Postal Code";   Expression={$_.u_postalcode}}, `
         @{Name="Status";        Expression={$_.state}}
 
-    $csvPath = "C:\PathToYourFolderHere\Hardware_Shipments.csv"
     $csvRows | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
 
     Write-Host "Exported $($csvRows.Count) rows to $csvPath"
