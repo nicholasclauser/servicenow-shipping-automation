@@ -1,6 +1,6 @@
 # Setup Guide
 
-## Requirements
+## Requirements 
 - ServiceNow Personal Developer Instance
 - PowerShell 5.1+
 - OneDrive
@@ -19,8 +19,11 @@ Generate REQ/RITM records with address data.
 ### 3. Configure OneDrive
 Create a folder for the CSV.
 
-### 4. Set Script Path
+### 4. Set Script Path and Variables
 Update:
+$instance = "devinstance.service-now.com"
+$user = "usernamegoeshere"
+$pwd = "passwordgoeshere"
 $csvPath = "C:\Users\YourUser\OneDrive\Hardware_Shipments.csv"
 
 ### 5. Run the Script
