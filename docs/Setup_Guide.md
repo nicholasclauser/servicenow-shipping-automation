@@ -10,8 +10,8 @@
 
 ### 1. Configure ServiceNow
 1. Open PDI.
-2. Add custom fields: u_city, u_street, u_postalcode.
-3. Add them to sc_req_item form layout.
+2. Add custom fields: `u_city`, `u_street`, `u_postalcode`.
+3. Add them to the `sc_req_item` form layout.
 
 ### 2. Create Test Tickets
 Generate REQ/RITM records with address data.
@@ -20,20 +20,22 @@ Generate REQ/RITM records with address data.
 Create a folder for the CSV.
 
 ### 4. Set Script Path and Variables
-Update:
+Update the following variables in the script:
+
+```powershell
 $instance = "devinstance.service-now.com"
 $user = "usernamegoeshere"
 $pwd = "passwordgoeshere"
 $csvPath = "C:\Users\YourUser\OneDrive\Hardware_Shipments.csv"
-
+```
 ### 5. Run the Script
-Execute in PowerShell.
+Execute the script in PowerShell.
 
 ### 6. Build Excel Dashboard
-1. Create an XLSX in Excel Online.
-2. Use Power Query to import the CSV.
-3. Build dashboards and views.
+1. Create an XLSX file in Excel Online.
+2. Use **Power Query** to import the CSV.
+3. Build your dashboards and views.
 4. Refresh to update data.
 
 ### Optional: Task Scheduler
-Automate daily or hourly script execution.
+You can automate the script to run daily or hourly using Windows Task Scheduler.
