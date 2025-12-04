@@ -1,14 +1,15 @@
 # Build-ShippingCSV.ps1
 # extracts shipping data from ServiceNow and exports it to a CSV that syncs through OneDrive.
 
-# connection info - 
+# connection info
 $instance = "devinstance.service-now.com"
-$user = "usernamegoeshere"
-$pwd = "passwordgoeshere"
-$csvPath = "C:\PathToYourFolderHere\Hardware_Shipments.csv"
+$csvPath  = "C:\PathToYourFolderHere\Hardware_Shipments.csv"
 
-# build basic auth header
-$authString = "{0}:{1}" -f $user, $pwd
+# the script stores no password. it prompts at runtime.
+$cred = Get-Credential -Message "ServiceNow $instance login"
+
+# build basic auth header, materializing the password only here
+$authString  = "{0}:{1}" -f $cred.UserName, $cred.GetNetworkCredential().Password
 $encodedAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($authString))
 
 $headers = @{
